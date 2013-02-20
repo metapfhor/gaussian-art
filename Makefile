@@ -9,7 +9,7 @@ PFLAGS =  -cpp $(CFLAGS)
 
 LIBS = /usr/lib64/liblapack.so.3 /usr/lib64/libblas.so.3
 
-EXEC = arttest
+EXEC = arttest.exe
 all:$(EXEC)
 
 $(EXEC): $(OBJ)
