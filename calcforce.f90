@@ -26,11 +26,11 @@ subroutine calcforce(nat, posa, boxl, forca, energy, evalf_number, conv )
 
 
    if(energy_type == "SWP")  then
-      call SWcalcforce(nat,posa,boxl,forca, energy)
-      evalf_number = evalf_number +1
-!   elseif(energy_type== "GAU") then
-!   	call GAUcalcforce(nat,posa,boxl,forca, energy)
-!		evalf_number = evalf_number +1
+    call SWcalcforce(nat,posa,boxl,forca, energy)
+    evalf_number = evalf_number +1
+   elseif(energy_type== "GAU") then
+   	call SWcalcforce(nat,posa,boxl,forca, energy)
+		evalf_number = evalf_number +1
    endif
 
 END SUBROUTINE calcforce

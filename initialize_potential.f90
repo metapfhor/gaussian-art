@@ -20,9 +20,10 @@ subroutine initialize_potential( )
    if (energy_type == "SWP") then
       call init_potential_SW()
       call calcforce( NATOMS, pos, boxref, force, total_energy, evalf_number, .false. )
-   else
-      write(*,*) "You have not chosen a proper energy type. Choose SWP in ENERGY_CALC"
-      stop
+! Laurent Modification: we need to allow more energy types
+! Removed:   else
+!      write(*,*) "You have not chosen a proper energy type. Choose SWP in ENERGY_CALC"
+!      stop
    endif
 
 END SUBROUTINE initialize_potential
