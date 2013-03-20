@@ -4,12 +4,12 @@ my $file_name = $ARGV[0];
 my $cwd = getcwd();
 my $seperator=0;
 my @forces;
-my $status=system("g09 temp.com");
+#my $status=system("g09 temp.com");
 
 open(INPUT,"<$cwd/temp.log") or die "Cannot open $cwd/temp.log to read: $!\n";
 open(OUTPUT,">$cwd/temp.forces")  or die "Cannot open $cwd/temp.forces to read: $!\n";
 while ((my $line = <INPUT>) && $seperator<2) {
-  print "$line";
+#  print "$line";
 	if($line =~ /Forces/){
 		#We have entered the force section fo the output
 		while(($line = <INPUT>) && $seperator<2){			

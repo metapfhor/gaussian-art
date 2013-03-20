@@ -145,7 +145,7 @@ subroutine read_parameters( )
   call getenv('Forcefield', temporary)
   if (temporary .eq. '') then
      write(*,*) "Error: energy calculation type is not defined: Forcefield " 
-     write(*,*) " choose: BIG or SWP, BSW, OTF (buggy), BAY (buggy)  "
+     write(*,*) " choose: BIG or SWP, BSW, OTF (buggy), BAY (buggy), GAU (debugging)  "
      stop
   else
      read(temporary,*) energy_type   

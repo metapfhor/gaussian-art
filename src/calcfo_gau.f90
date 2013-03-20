@@ -51,8 +51,8 @@ subroutine readforce(nat,force)
   real(kind=8), intent(out), dimension(3*nat) :: force
   integer :: i
 
-  open(unit=FFORCES,file='temp.forces',status='replace')
-  do i=0,nat-1
+  open(unit=FFORCES,file='temp.forces',status='old')
+  do i=0,nat-2
     read(FFORCES,'(F16.10,F16.10,F16.10)')force(3*i+1),force(3*i+2),force(3*i+3)
   enddo
   close(FFORCES)

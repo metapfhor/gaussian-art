@@ -29,7 +29,7 @@ subroutine calcforce(nat, posa, boxl, forca, energy, evalf_number, conv )
     call SWcalcforce(nat,posa,boxl,forca, energy)
     evalf_number = evalf_number +1
    elseif(energy_type== "GAU") then
-   	call SWcalcforce(nat,posa,boxl,forca, energy)
+   	call GAUcalcforce(nat,posa,boxl,forca, energy)
 		evalf_number = evalf_number +1
    endif
 

@@ -41,11 +41,11 @@ subroutine min_converge ( success )
       write(FLOG,'(1X,A)') ' RELAXATION'
       close(FLOG) 
    end if
-
-   if (energy_type == "SWP") then
+! Laurent Modification: Removed due to specificity of energy_type but may need to be re-added later
+!   if (energy_type == "SWP") then
       write(*,*) "go into fire"
       call min_converge_fire(success)
-   endif
+!   endif
 
    if ( iproc == 0 ) then 
       if ( .not. success ) then 

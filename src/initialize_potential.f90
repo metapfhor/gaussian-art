@@ -17,9 +17,13 @@ subroutine initialize_potential( )
    !Local variables
    integer :: ierror
 
+! Laurent Modification: just seems simpler this way
+   call calcforce( NATOMS, pos, boxref, force, total_energy, evalf_number, .false. )
+
    if (energy_type == "SWP") then
       call init_potential_SW()
-      call calcforce( NATOMS, pos, boxref, force, total_energy, evalf_number, .false. )
+! Laurent Modification: Moved calcforce outside of the if statement so we can have a single one inside calcforce to worry about
+!      call calcforce( NATOMS, pos, boxref, force, total_energy, evalf_number, .false. )
 ! Laurent Modification: we need to allow more energy types
 ! Removed:   else
 !      write(*,*) "You have not chosen a proper energy type. Choose SWP in ENERGY_CALC"
