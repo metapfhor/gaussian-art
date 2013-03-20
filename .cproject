@@ -20,7 +20,7 @@
 					<folderInfo id="0.1196470072." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.324366101" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.324366101.1920626467" name=""/>
-							<builder buildPath="${workspace_loc:/gaussian-art/gaussian-art}" id="org.eclipse.cdt.build.core.settings.default.builder.556104565" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<builder buildPath="${workspace_loc:/gaussian-art/src}" id="org.eclipse.cdt.build.core.settings.default.builder.556104565" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.1858197835" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.759241438" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1495946523" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
@@ -36,13 +36,13 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="0.1196470072.1924654165" name="/" resourcePath="gaussian-art">
-						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.1063713166" name="No ToolChain" superClass="org.eclipse.cdt.build.core.prefbase.toolchain" unusedChildren="">
-							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.602250868" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs.1858197835"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1255604113" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder.759241438"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.9650863" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.369372589"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1548004633" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder.1062183581"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1985742728" name="Fortran" superClass="org.eclipse.cdt.build.core.settings.holder.461741796"/>
+					<folderInfo id="0.1196470072.1192189641" name="/" resourcePath="src">
+						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.1669883567" name="No ToolChain" superClass="org.eclipse.cdt.build.core.prefbase.toolchain" unusedChildren="">
+							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.239331898" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs.1858197835"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.2134418448" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder.759241438"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.428643055" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder.369372589"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.617232383" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder.1062183581"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1409526642" name="Fortran" superClass="org.eclipse.cdt.build.core.settings.holder.461741796"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>

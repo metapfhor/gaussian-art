@@ -2,3 +2,5 @@
 *.mod
 *.o
 *.exe
+log.file.*
+min*
