@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.photran.launch.localCLaunch">
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.AUTO_SOLIB" value="true"/>
+<listAttribute key="org.eclipse.cdt.debug.mi.core.AUTO_SOLIB_LIST"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.DEBUG_NAME" value="gdb"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.GDB_INIT" value=".gdbinit"/>
+<listAttribute key="org.eclipse.cdt.debug.mi.core.SOLIB_PATH"/>
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.STOP_ON_SOLIB_EVENTS" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.breakpointsFullPath" value="false"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.commandFactory" value="org.eclipse.cdt.debug.mi.core.standardCommandFactory"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.protocol" value="mi"/>
+<booleanAttribute key="org.eclipse.cdt.debug.mi.core.verboseMode" value="false"/>
+<intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
+<stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="org.eclipse.cdt.debug.mi.core.CDebuggerNew"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
+<booleanAttribute key="org.eclipse.cdt.launch.ENABLE_REGISTER_BOOKKEEPING" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.launch.ENABLE_VARIABLE_BOOKKEEPING" value="false"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value="-e &quot;bash -c \&quot; ./bart.sh; exec bash\&quot;&quot;"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="/home/lmackay/workspace/gaussian-art/src/arttest.exe"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="gaussian-art"/>
+<booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="0.1196470072"/>
+<booleanAttribute key="org.eclipse.cdt.launch.use_terminal" value="true"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/gaussian-art"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="Activation_MaxIter" value="100"/>
+<mapEntry key="Basin_Factor" value="2.4"/>
+<mapEntry key="DIIS_Check_Eigenvector" value=".True."/>
+<mapEntry key="DIIS_Force_Threshold" value="1.5"/>
+<mapEntry key="DIIS_Memory" value="5"/>
+<mapEntry key="DIIS_Step_size" value="0.03"/>
+<mapEntry key="EVENTSLIST" value="events.list"/>
+<mapEntry key="Eigenvalue_Threshold" value="-1.5"/>
+<mapEntry key="Event_type" value="NEW"/>
+<mapEntry key="Exit_Force_Threshold" value="0.10"/>
+<mapEntry key="FACTOR_DIIS" value="5.0"/>
+<mapEntry key="FILECOUNTER" value="filecounter"/>
+<mapEntry key="Force_Threshold_Perp_Rel" value="0.5"/>
+<mapEntry key="Forcefield" value="GAU"/>
+<mapEntry key="Increment_Size" value="0.08"/>
+<mapEntry key="Inflection" value="4"/>
+<mapEntry key="Initial_Step_Size" value="0.05"/>
+<mapEntry key="Iterative" value=".False."/>
+<mapEntry key="LOGFILE" value="log.file"/>
+<mapEntry key="Lanczos_of_minimum" value=".False."/>
+<mapEntry key="MAX_DIIS" value="150"/>
+<mapEntry key="Max_Iter_Basin" value="20"/>
+<mapEntry key="Max_Number_Events" value="100"/>
+<mapEntry key="Max_Perp_Moves_Basin" value="3"/>
+<mapEntry key="Min_Number_KSteps" value="2"/>
+<mapEntry key="N_atoms" value="8"/>
+<mapEntry key="Number_Lanczos_Vectors" value="15"/>
+<mapEntry key="Prefactor_Push_Over_Saddle" value="0.15"/>
+<mapEntry key="REFCONFIG" value="ethylene"/>
+<mapEntry key="RESTART" value="restart.dat"/>
+<mapEntry key="Radius_Initial_Deformation" value="3.5"/>
+<mapEntry key="Save_Conf_Int" value=".False."/>
+<mapEntry key="Temperature" value="0.5"/>
+<mapEntry key="Type_of_Events" value="local"/>
+<mapEntry key="Use_DIIS" value=".False."/>
+<mapEntry key="Write_JMOL" value=".False."/>
+<mapEntry key="Write_restart_file" value=".False."/>
+<mapEntry key="delta_disp_Lanczos" value="0.00025"/>
+<mapEntry key="gnrm" value="1.0E-5"/>
+<mapEntry key="sym_break_dist" value="0.001"/>
+</mapAttribute>
+</launchConfiguration>
