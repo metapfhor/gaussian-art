@@ -42,7 +42,7 @@ subroutine min_converge ( success )
       close(FLOG) 
    end if
 ! Laurent Modification: Removed due to specificity of energy_type but may need to be re-added later
-!   if (energy_type == "SWP") then
+!    if (energy_type == "SWP") then
       write(*,*) "go into fire"
       call min_converge_fire(success)
 !   endif

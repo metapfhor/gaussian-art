@@ -4,20 +4,24 @@ use Cwd;
 my $file_name = $ARGV[0];
 my $cwd = getcwd();
 my $seperator=0;
-my @forces;
+
 my $status=system("g09 temp.com");
 my $fp="%16.10e";
 my $fn="%16.9e";
 my $force;
+my $forces;
+my $enegry;
+
 
 open(INPUT,"<$cwd/temp.log") or die "Cannot open $cwd/temp.log to read: $!\n";
 open(OUTPUT,">$cwd/temp.forces")  or die "Cannot open $cwd/temp.forces to read: $!\n";
 while ((my $line = <INPUT>) && $seperator<2) {
 if($line =~ /E\(\w+\)\s+=\s+(\S+)/){
-	 if($1>0){
-	 	print OUTPUT sprintf($fp,"$1")."\n";
+	$energy=$1*27.211383;
+	 if($energy>0){
+	 	print OUTPUT sprintf($fp,"$energy")."\n";
 	 }else{
-	 	print OUTPUT sprintf($fn,"$1")."\n";
+	 	print OUTPUT sprintf($fn,"$energy")."\n";
 	 }
   } 
 	if($line =~ /Forces/){
@@ -27,24 +31,27 @@ if($line =~ /E\(\w+\)\s+=\s+(\S+)/){
 				$seperator++;	
 			}
 			elsif($line =~ /(\d+)( +)(\d+)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)/){
-				if("$5$6">0){
-					$force=sprintf($fp,"$5$6");
+				$force="$5$6"*1;
+				if($force>0){
+					$forces=sprintf($fp,"$force");
 				}else{
-					$force=sprintf($fn,"$5$6");
+					$forces=sprintf($fn,"$force");
 				}
-				$force=$force."   ";
-				if("$8$9">0){
-					$force=$force.sprintf($fp,"$8$9");
+				$forces=$forces."   ";
+				$force="$8$9"*1;
+				if($force>0){
+					$forces=$forces.sprintf($fp,"$force");
 				}else{
-					$force=$force.sprintf($fn,"$8$9");
+					$forces=$forces.sprintf($fn,"$force");
 				}
-				$force=$force."   ";
-				if("$11$12">0){
-					$force=$force.sprintf($fp,"$11$12");
+				$forces=$forces."   ";
+				$force="$11$12"*1;
+				if("$force">0){
+					$forces=$forces.sprintf($fp,"$force");
 				}else{
-					$force=$force.sprintf($fn,"$11$12");
+					$forces=$forces.sprintf($fn,"$force");
 				}
-				print OUTPUT "$force\n";
+				print OUTPUT "$forces\n";
 			}
 		}
 	}

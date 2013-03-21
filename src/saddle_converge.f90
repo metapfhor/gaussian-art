@@ -506,7 +506,7 @@ subroutine end_report ( success, ret, saddle_energy )
       if ( success ) then  
          ! Write  
          write(*,*) 'BART: Configuration stored in file ',fname
-         write(FLOG,'(1X,A34,A17)') ' - Configuration stored in file : ', trim(fname)
+         write(FLOG,'(1X,A34,A17)') ' - Configuration stored in file (saddle_converge.f90): ', trim(fname)
          write(FLOG,'(1X,A34,(1p,e17.10,0p))') &
             &   ' - Total energy Saddle (eV)     : ', saddle_energy
          write(FLOG,*) ' '

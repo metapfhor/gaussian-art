@@ -217,7 +217,7 @@ program art90
         close(FLIST)
         open( unit = FLOG, file = LOGFILE, status = 'unknown',&
             & action = 'write', position = 'append', iostat = ierror ) 
-        write(*,*) 'BART: Configuration stored in file ',fname
+        write(*,*) 'BART: Configuration stored in file (art.f90) ',fname
         write(FLOG,'(1X,A34,A17)') ' - Configuration stored in file : ', trim(fname)
         write(FLOG,'(1X,A34,(1p,e17.10,0p))')&
         &  ' - Total energy Minimum (eV)    : ', total_energy 
