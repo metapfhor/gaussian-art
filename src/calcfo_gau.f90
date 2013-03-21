@@ -7,7 +7,7 @@ subroutine GAUcalcforce(nat,posa,boxl,tmp_force, pot_energy)
 
   call runGaussian()
 
-  call readforce(nat,tmp_force)
+  call readforce(nat,tmp_force,pot_energy)
 
 end subroutine GAUcalcforce
 
@@ -27,11 +27,17 @@ subroutine mkinput(nat,posa)
 
 
   write(FGAU,*) '%chk=temp.chk'
-  write(FGAU,*) '# opt rhf/3-21g nosymm force '
+  write(FGAU,*) '#rhf/3-21g nosymm force '
+  write(FGAU,*) ' '
+  write(FGAU,*) ' '
+  write(FGAU,*) ' '
+  write(FGAU,*) '0 1'
 
- do i=0,nat-1
-  write(FGAU,'(8X,A2,4X,F16.10,F16.10,F16.10)')type_name(typat(i)),posa(3*i+1),posa(3*i+2),posa(3*i+3)
+
+ do i=1,nat
+  write(FGAU,'(8X,A2,4X,F16.10,F16.10,F16.10)')type_name(typat(i)),posa(i),posa(nat+i),pos(2*nat+i)
  enddo
+ write(FGAU,*) ' '
  close(FGAU)
 
 end subroutine mkinput
@@ -42,18 +48,22 @@ subroutine runGaussian()
 
 end subroutine runGaussian
 
-subroutine readforce(nat,force)
+subroutine readforce(nat,force,energy)
 
   use defs , only: FFORCES
   implicit none
 
   integer, intent(in)                          :: nat
   real(kind=8), intent(out), dimension(3*nat) :: force
+  real(kind=8), intent(out) :: energy
   integer :: i
+  character(len=80) :: temp
+
 
   open(unit=FFORCES,file='temp.forces',status='old')
-  do i=0,nat-2
-    read(FFORCES,'(F16.10,F16.10,F16.10)')force(3*i+1),force(3*i+2),force(3*i+3)
+    read(FFORCES,'(ES16.10)')energy
+  do i=1,nat
+    read(FFORCES,'(ES16.10,A3,ES16.10,A3,ES16.10)')force(i),temp,force(nat+i),temp,force(2*nat+i)
   enddo
   close(FFORCES)
 

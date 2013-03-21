@@ -7,7 +7,8 @@ LINK = $(F77)
 # CFLAGS = -cpp -fsloppy-char
 PFLAGS =  -cpp $(CFLAGS)
 
-LIBS = /usr/lib/liblapack.so.3gf /usr/lib/libblas.so.3gf
+#LIBS = /usr/lib/liblapack.so.3gf /usr/lib/libblas.so.3gf
+LIBS = /usr/lib64/liblapack.so.3 /usr/lib64/libblas.so.3
 
 EXEC = arttest.exe
 all:$(EXEC)

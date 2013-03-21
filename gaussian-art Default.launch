@@ -70,7 +70,7 @@
 <mapEntry key="Temperature" value="0.5"/>
 <mapEntry key="Type_of_Events" value="local"/>
 <mapEntry key="Use_DIIS" value=".False."/>
-<mapEntry key="Write_JMOL" value=".False."/>
+<mapEntry key="Write_JMOL" value=".True."/>
 <mapEntry key="Write_restart_file" value=".False."/>
 <mapEntry key="delta_disp_Lanczos" value="0.00025"/>
 <mapEntry key="gnrm" value="1.0E-5"/>

@@ -57,4 +57,4 @@ export Write_restart_file=.False.   # It is useful only for ab-initio
 export RESTART=restart.dat   # current data for restarting event
 export Write_JMOL=.False.   # Writes the configuration in jmol format.
 ###### RUN THE SIMULATION #######################################################################
-gaussian-art/arttest.exe
+./arttest.exe
