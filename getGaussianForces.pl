@@ -11,7 +11,7 @@ my $fn="%16.9e";
 my $force;
 my $forces;
 my $enegry;
-my $factor=-6000000000000000000000000000000000000000; 
+my $factor=1; 
 
 
 open(INPUT,"<$cwd/temp.log") or die "Cannot open $cwd/temp.log to read: $!\n";
