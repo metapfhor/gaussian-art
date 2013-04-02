@@ -233,4 +233,7 @@ subroutine initialize()
      call calcforce( NATOMS, pos, boxl, force, total_energy, evalf_number, .false. )
 
   end if If_ne
+! Laurent Modification: Open up temp.xyz to clean it out
+open(unit=FXYZ,file='temp.xyz',status='replace',access='append')
+close(FXYZ)
 END SUBROUTINE initialize

@@ -11,6 +11,7 @@ my $fn="%16.9e";
 my $force;
 my $forces;
 my $enegry;
+my $factor=-6000000000000000000000000000000000000000; 
 
 
 open(INPUT,"<$cwd/temp.log") or die "Cannot open $cwd/temp.log to read: $!\n";
@@ -31,21 +32,21 @@ if($line =~ /E\(\w+\)\s+=\s+(\S+)/){
 				$seperator++;	
 			}
 			elsif($line =~ /(\d+)( +)(\d+)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)/){
-				$force="$5$6"*1;
+				$force="$5$6"*$factor;
 				if($force>0){
 					$forces=sprintf($fp,"$force");
 				}else{
 					$forces=sprintf($fn,"$force");
 				}
 				$forces=$forces."   ";
-				$force="$8$9"*1;
+				$force="$8$9"*$factor;
 				if($force>0){
 					$forces=$forces.sprintf($fp,"$force");
 				}else{
 					$forces=$forces.sprintf($fn,"$force");
 				}
 				$forces=$forces."   ";
-				$force="$11$12"*1;
+				$force="$11$12"*$factor;
 				if("$force">0){
 					$forces=$forces.sprintf($fp,"$force");
 				}else{

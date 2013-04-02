@@ -1,7 +1,10 @@
 subroutine GAUcalcforce(nat,posa,boxl,tmp_force, pot_energy)
+  implicit none
   integer, intent(in)                          :: nat
+  real(kind=8), dimension(3), intent(inout)          :: boxl
   real(kind=8), intent(in), dimension(3*nat) :: posa
   real(kind=8), intent(inout), dimension(3*nat), target :: tmp_force
+  real(kind=8), intent(out) :: pot_energy
 
   call mkinput(nat,posa)
 
@@ -24,7 +27,7 @@ subroutine mkinput(nat,posa)
 
   call getenv('temporary_gaussian',temp)
   open(unit=FGAU,file='temp.com',status='replace')
-  open(unit=FXYZ,file='temp.xyz',status='unknown',access='append')
+  open(unit=FXYZ,file='temp.xyz',status='old',access='append')
 
   write(FGAU,*) '%chk=temp.chk'
   write(FGAU,*) '#rhf/3-21g nosymm force '
@@ -43,7 +46,7 @@ subroutine mkinput(nat,posa)
  enddo
  write(FGAU,*) ' '
  close(FGAU)
-
+ close(FXYZ)
 end subroutine mkinput
 
 subroutine runGaussian()
@@ -67,7 +70,7 @@ subroutine readforce(nat,force,energy)
   open(unit=FFORCES,file='temp.forces',status='old')
     read(FFORCES,'(ES16.10)')energy
   do i=1,nat
-    read(FFORCES,'(ES16.10,A3,ES16.10,A3,ES16.10)')force(i),temp,force(nat+i),temp,force(2*nat+i)
+    read(FFORCES,*)force(i),force(nat+i),force(2*nat+i)
   enddo
   close(FFORCES)
 
