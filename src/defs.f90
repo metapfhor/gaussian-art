@@ -60,6 +60,7 @@ module defs
   integer, parameter :: FGAU       = 7
   integer, parameter :: FFORCES    = 8
   integer, parameter :: FXYZ       = 10
+  integer, parameter :: FHEAD       = 16
 
   ! Name of the file storing the current configurations
   character(len=20) :: conf_initial, conf_saddle, conf_final

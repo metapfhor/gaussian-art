@@ -28,13 +28,29 @@ subroutine mkinput(nat,posa)
   call getenv('temporary_gaussian',temp)
   open(unit=FGAU,file='temp.com',status='replace')
   open(unit=FXYZ,file='temp.xyz',status='old',access='append')
+  open(unit=FHEAD,file='header',status='old',action='read')
 
-  write(FGAU,*) '%chk=temp.chk'
-  write(FGAU,*) '#rhf/3-21g nosymm force '
-  write(FGAU,*) ' '
-  write(FGAU,*) ' '
-  write(FGAU,*) ' '
-  write(FGAU,*) '0 1'
+  read(FHEAD,'(A)') temp
+  write(FGAU,'(A)') temp
+  read(FHEAD,'(A)') temp
+  write(FGAU,'(A)') temp
+  read(FHEAD,'(A)') temp
+  write(FGAU,'(A)') temp
+  read(FHEAD,'(A)') temp
+  write(FGAU,'(A)') temp
+  read(FHEAD,'(A)') temp
+  write(FGAU,'(A)') temp
+  read(FHEAD,'(A)') temp
+  write(FGAU,'(A)') temp
+
+  !write(FGAU,*) '%chk=temp.chk'
+  !write(FGAU,*) '#rhf/3-21g nosymm force '
+  !write(FGAU,*) ' '
+  !write(FGAU,*) ' '
+  !write(FGAU,*) ' '
+  !write(FGAU,*) '0 1'
+
+  close(FHEAD)
 
   write(FXYZ,*) nat
   write(FXYZ,*) 'MOLECULAR TITLE'
