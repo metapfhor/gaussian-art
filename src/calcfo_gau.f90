@@ -27,7 +27,7 @@ subroutine mkinput(nat,posa)
 
   call getenv('temporary_gaussian',temp)
   open(unit=FGAU,file='temp.com',status='replace')
-  open(unit=FXYZ,file='temp.xyz',status='old',access='append')
+  !open(unit=FXYZ,file='temp.xyz',status='old',access='append')
   open(unit=FHEAD,file='header',status='old',action='read')
 
   read(FHEAD,'(A)') temp
@@ -62,7 +62,7 @@ subroutine mkinput(nat,posa)
  enddo
  write(FGAU,*) ' '
  close(FGAU)
- close(FXYZ)
+! close(FXYZ)
 end subroutine mkinput
 
 subroutine runGaussian()

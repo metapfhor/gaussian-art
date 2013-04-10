@@ -281,6 +281,9 @@ subroutine end_art( )
     close(FLOG)
   end if 
 
+! Laurent Modification: close temp.xyz
+  close(FXYZ)
+
 #ifdef MPI
   if (nproc > 1) call MPI_FINALIZE(ierr)
 #endif
