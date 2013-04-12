@@ -49,7 +49,7 @@ export FACTOR_DIIS=5.0   # times Increment_Size, max allowed diis step size
 export MAX_DIIS=150   # max diis iterations per call
 #_____________________________ INPUT 
 export FILECOUNTER=filecounter   # File tracking  the file (event) number - facultative
-export REFCONFIG=ethylene  # Reference configuration (actual local minimum)
+export REFCONFIG=ethane  # Reference configuration (actual local minimum)
 #_____________________________ OUTPUT 
 export LOGFILE=log.file   # General output for message
 export EVENTSLIST=events.list   # list of events with success or failure
