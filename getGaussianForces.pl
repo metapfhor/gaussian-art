@@ -11,8 +11,7 @@ my $fn="%16.9e";
 my $force;
 my $forces;
 my $enegry;
-my $factor=1; 
-
+my $factor=27.211/0.529;
 
 open(INPUT,"<$cwd/temp.log") or die "Cannot open $cwd/temp.log to read: $!\n";
 open(OUTPUT,">$cwd/temp.forces")  or die "Cannot open $cwd/temp.forces to read: $!\n";
@@ -32,27 +31,29 @@ if($line =~ /E\(\w+\)\s+=\s+(\S+)/){
 				$seperator++;	
 			}
 			elsif($line =~ /(\d+)( +)(\d+)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)( +)(-?\d+\.\d+([Ee][+-]?\d+)?)/){
-				$force="$5$6"*$factor;
-				if($force>0){
-					$forces=sprintf($fp,"$force");
-				}else{
-					$forces=sprintf($fn,"$force");
+				if($3!="0"){
+					$force="$5$6"*$factor;
+					if($force>0){
+						$forces=sprintf($fp,"$force");
+					}else{
+						$forces=sprintf($fn,"$force");
+					}
+					$forces=$forces."   ";
+					$force="$8$9"*$factor;
+					if($force>0){
+						$forces=$forces.sprintf($fp,"$force");
+					}else{
+						$forces=$forces.sprintf($fn,"$force");
+					}
+					$forces=$forces."   ";
+					$force="$11$12"*$factor;
+					if("$force">0){
+						$forces=$forces.sprintf($fp,"$force");
+					}else{
+						$forces=$forces.sprintf($fn,"$force");
+					}
+					print OUTPUT "$forces\n";
 				}
-				$forces=$forces."   ";
-				$force="$8$9"*$factor;
-				if($force>0){
-					$forces=$forces.sprintf($fp,"$force");
-				}else{
-					$forces=$forces.sprintf($fn,"$force");
-				}
-				$forces=$forces."   ";
-				$force="$11$12"*$factor;
-				if("$force">0){
-					$forces=$forces.sprintf($fp,"$force");
-				}else{
-					$forces=$forces.sprintf($fn,"$force");
-				}
-				print OUTPUT "$forces\n";
 			}
 		}
 	}

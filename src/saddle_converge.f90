@@ -132,6 +132,7 @@ subroutine saddle_converge( ret, saddle_energy )
             end if
             try = try + 1
 
+
             if ( fperp < FTHRESHOLD .or. m_perp >= MAXKPERP &
                &   .or. step_rejected > 5 ) exit While_perpk
 

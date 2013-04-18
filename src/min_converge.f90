@@ -45,6 +45,8 @@ subroutine min_converge ( success )
 !    if (energy_type == "SWP") then
       write(*,*) "go into fire"
       call min_converge_fire(success)
+!      write(*,*) "go into sd"
+!      call min_converge_sd(success)
 !   endif
 
    if ( iproc == 0 ) then 
@@ -143,7 +145,7 @@ MODULE minimization_sd
    save
    integer, parameter :: MAX_ITER = 1000
    real(kind=8), parameter :: FTHRESHOLD = 3.5D-1
-   real(kind=8), parameter :: STEPSIZE = 1.0D-4  ! Size in angstroems
+   real(kind=8), parameter :: STEPSIZE = 1.0D-2  ! Size in angstroems
 
    real(kind=8), parameter :: FTHRESH2 = FTHRESHOLD * FTHRESHOLD
 END MODULE minimization_sd
@@ -203,7 +205,7 @@ subroutine min_converge_sd(minimized)
       if(ftot2 < FTHRESH2) exit
       call displacement( posref, pos, delr, npart )
       ! Write 
-
+      write(*,*) "ftot2",ftot2,"current_fot2",current_ftot2
       if (modulo(iter,5) == 0 ) then
          call write_step ( 'M', iter, 0.0d0, current_energy )
          if ( SAVE_CONF_INT ) call save_intermediate( 'M' )
