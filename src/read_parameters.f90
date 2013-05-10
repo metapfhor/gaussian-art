@@ -298,7 +298,6 @@ subroutine read_parameters( )
   else
      read(temporary,*) MAXKTER
   end if
-
 !SECTION_____________________________ LANCZOS
 
   ! Convergence criterion for the wavefunction optimization in Lanczos

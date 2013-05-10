@@ -163,14 +163,15 @@ subroutine saddle_converge( ret, saddle_energy )
             call MPI_Barrier( MPI_COMM_WORLD, ierr )
 #endif
             call end_art( )
-
-         else if ( kter > KTER_MIN  ) then
+         !Laurent Modification: replaced for more stringent logic of KTER_MIN
+        !else if ( kter > KTER_MIN  ) then
+         else if ( kter /= KTER_MIN  ) then
             ! we get eigen direction for the minimum of this hyperplane.
             call lanczos( NVECTOR_LANCZOS_H, new_projection, a1 )
             ! Lanczos call, we start from the
             new_projection = .false.      ! previous direction each time.
          end if
-         ! Write 
+         ! Write
          call write_step ( 'K', kter, a1, current_energy )
          ! For restart ( restart.f90 )
          if ( write_restart_file ) then 
@@ -181,7 +182,9 @@ subroutine saddle_converge( ret, saddle_energy )
          pas = pas + 1
 
          ! Is the configuration out of the harmonic basin?
-         if ( eigenvalue < EIGEN_THRESH .and. (.not. setup_initial) ) exit Do_kter 
+         !Laurent Modification: replaced for more stringent logic of KTER_MIN
+         !if ( eigenvalue < EIGEN_THRESH .and. (.not. setup_initial)) exit Do_kter 
+         if ( eigenvalue < EIGEN_THRESH .and. (.not. setup_initial) .and. kter>=KTER_MIN ) exit Do_kter 
          ! If not, we move the configuration along 
          ! the initial direction.
          pos = pos + BASIN_FACTOR * INCREMENT * initial_direction  

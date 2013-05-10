@@ -43,10 +43,10 @@ subroutine min_converge ( success )
    end if
 ! Laurent Modification: Removed due to specificity of energy_type but may need to be re-added later
 !    if (energy_type == "SWP") then
-      write(*,*) "go into fire"
-      call min_converge_fire(success)
-!      write(*,*) "go into sd"
-!      call min_converge_sd(success)
+!      write(*,*) "go into fire"
+!      call min_converge_fire(success)
+      write(*,*) "go into sd"
+      call min_converge_sd(success)
 !   endif
 
    if ( iproc == 0 ) then 

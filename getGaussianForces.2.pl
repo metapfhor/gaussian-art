@@ -66,16 +66,9 @@
 	    if($line =~ /E\(\w+\)\s+=\s+(\S+)/){
 		$line2=<INPUT2>;
 		$energy=$1*$hartree_to_ev;
-		#	    if($energy>0){
-		#		   print  sprintf($fp,"$energy"-"$line2");
-		#	    }else{
-		#		   print sprintf($fn,"$energy"-"$line2");
-		# }
-		#print "\n";	
 	    } 
 	    elsif($line =~ /Forces/){
 		#We have entered the force section of the output
-		#
 		#read in extra table header line
 		$line = <INPUT3>;
 		while(($line = <INPUT3>) && $seperator<2){
